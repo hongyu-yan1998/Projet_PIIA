@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="appli.ControlPhoto">
+   <children>
+      <Button fx:id="retourBut" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #4B9843;" text="Retour" textFill="WHITE" />
+      <TableView fx:id="tableView" layoutX="145.0" layoutY="71.0" prefHeight="477.0" prefWidth="511.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="145.0" AnchorPane.rightAnchor="144.0" AnchorPane.topAnchor="70.0">
+        <columns>
+          <TableColumn fx:id="imageColumn" prefWidth="510.0" text="Photo" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

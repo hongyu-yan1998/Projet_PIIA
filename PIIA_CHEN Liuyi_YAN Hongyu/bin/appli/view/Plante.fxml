@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.Control">
+   <children>
+      <HBox maxHeight="200.0" prefHeight="228.0" prefWidth="800.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxHeight="160.0" prefHeight="160.0" prefWidth="800.0">
+               <children>
+                  <Label layoutX="262.0" layoutY="27.0" text="Liste de Plantes" textAlignment="CENTER" textFill="#375736" AnchorPane.leftAnchor="262.0" AnchorPane.rightAnchor="301.0">
+                     <font>
+                        <Font name="HanziPen SC Bold" size="36.0" />
+                     </font></Label>
+                  <Button fx:id="ajouterBut" layoutX="313.0" layoutY="100.0" mnemonicParsing="false" onAction="#ajouterPlante" style="-fx-background-color: #4B9843;" text="Ajouter une plante" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Al Bayan Bold" size="13.0" />
+                     </font></Button>
+                  <Button fx:id="calendarBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#pageCalendar" text="Calendar" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <TableView fx:id="tableView" layoutX="79.0" layoutY="200.0" onMouseClicked="#userClickedOnTable" prefHeight="317.0" prefWidth="643.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="200.0">
+        <columns>
+            <TableColumn fx:id="idColumn" minWidth="0.0" prefWidth="135.0" text="ID" />
+          <TableColumn fx:id="nomColumn" minWidth="0.0" onEditCommit="#changeNomCellEvent" prefWidth="181.0" text="Nom" />
+          <TableColumn fx:id="plantationColumn" prefWidth="326.0" text="Date de plantation" />
+        </columns>
+      </TableView>
+      <Button fx:id="detailBut" layoutX="235.0" layoutY="542.0" maxWidth="126.0" mnemonicParsing="false" onAction="#detailPlante" prefWidth="126.0" style="-fx-background-color: #0ba408;" text="Detail" textFill="WHITE" />
+      <Button fx:id="supprimerBut" layoutX="434.0" layoutY="542.0" mnemonicParsing="false" onAction="#supprimerPlante" style="-fx-background-color: #0ba408;" text="Supprimer Plante(s)" textFill="WHITE" />
+   </children>
+</AnchorPane>

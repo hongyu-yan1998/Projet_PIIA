@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.ControlDetail">
+   <children>
+      <VBox prefHeight="200.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="retourBut" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #4B9843;" text="Retour" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefWidth="400.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="301.0">
+                           <children>
+                              <Label fx:id="nom" text="Label" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="photo" fitHeight="252.0" fitWidth="333.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="changerPhotoBut" mnemonicParsing="false" onAction="#changerPhoto" style="-fx-background-color: #0ba408;" text="Changer photo" textFill="WHITE" />
+                              <Button fx:id="editerBut" mnemonicParsing="false" onAction="#editerPlante" style="-fx-background-color: #0ba408;" text="Editer" textFill="WHITE" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <GridPane prefHeight="423.0" prefWidth="345.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="ID" />
+                              <Label text="Date de rempotage" GridPane.rowIndex="1" />
+                              <Label text="Date de plantation" GridPane.rowIndex="2" />
+                              <Label fx:id="rempotage" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="plantation" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Date de arronsage" GridPane.rowIndex="3" />
+                              <Label text="Date de entretien" GridPane.rowIndex="4" />
+                              <Label text="Date de coupe" GridPane.rowIndex="5" />
+                              <Label text="Date de recotte" GridPane.rowIndex="6" />
+                              <Label text="Note" GridPane.rowIndex="7" />
+                              <Label fx:id="arronsage" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="entretien" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="coupe" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="recotte" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label fx:id="note" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label fx:id="id" text="Label" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="mesureBtn" mnemonicParsing="false" onAction="#pageMesure" prefWidth="425.0" style="-fx-background-color: #4B9843;" text="Mesures" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button fx:id="photoBtn" mnemonicParsing="false" onAction="#pagePhoto" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: #4B9843;" text="Photo de suivi" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="2.0" right="20.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="noteBtn" layoutX="150.0" layoutY="10.0" mnemonicParsing="false" onAction="#pageNote" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: #4B9843;" text="Note de suivi" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

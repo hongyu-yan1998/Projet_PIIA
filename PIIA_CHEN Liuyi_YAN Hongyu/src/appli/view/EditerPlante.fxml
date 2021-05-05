@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.ControlEditer">
+   <children>
+      <Button fx:id="retourBut" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #4B9843;" text="Retour" textFill="WHITE" />
+      <VBox prefHeight="100.0" prefWidth="518.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+                  <TextField fx:id="nom" maxHeight="15.0" prefHeight="12.0" prefWidth="161.0" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Photo" />
+                  <Text fx:id="photo" fill="#075cf0" onMouseClicked="#choisirPhoto" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisir une photo" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TabPane layoutX="118.0" layoutY="179.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Dates des événements">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0">
+                     <children>
+                        <GridPane prefHeight="180.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="Date de rempotage" />
+                              <Label text="Date de plantation" GridPane.rowIndex="1" />
+                              <Label text="Date de arronsage" GridPane.rowIndex="2" />
+                              <Label text="Date de entretien" GridPane.rowIndex="3" />
+                              <Label text="Date de coupe" GridPane.rowIndex="4" />
+                              <Label text="Date de recotte" GridPane.rowIndex="5" />
+                              <DatePicker fx:id="plantation" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="rempotage" GridPane.columnIndex="1" />
+                              <DatePicker fx:id="arronsage" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="entretien" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <DatePicker fx:id="coupe" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <DatePicker fx:id="recotte" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Notes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0">
+                     <children>
+                        <TextField fx:id="note" prefHeight="180.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Photo">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0">
+                     <children>
+                        <ImageView fx:id="img" fitHeight="171.0" fitWidth="489.0" layoutX="45.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <HBox alignment="CENTER" layoutX="300.0" layoutY="428.0" prefHeight="50.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="mesuresBut" mnemonicParsing="false" onAction="#ChangePageMesures" prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: #4B9843;" text="Mesures" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="ajouterBut" layoutX="366.0" layoutY="528.0" mnemonicParsing="false" onAction="#ajouterPlante" style="-fx-background-color: #7BAB77; -fx-background-radius: 10; -fx-border-color: #4B9843; -fx-border-radius: 10; -fx-border-width: 1;" text="enregistrer" textFill="WHITE">
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </Button>
+   </children>
+</AnchorPane>
